@@ -1,7 +1,7 @@
-import * as THREE from 'three';
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'https://unpkg.com/three@0.146.0/build/three.module.js';
+import {OrbitControls} from 'https://unpkg.com/three@0.146.0/examples/jsm/controls/OrbitControls.js';
 
-import { ARButton } from 'three/examples/jsm/webxr/ARButton.js';
+import { ARButton } from 'https://unpkg.com/three@0.146.0/examples/jsm/webxr/ARButton.js';
 
 import starsTexture from './img/stars.jpg';
 import sunTexture from './img/sun.jpg';
