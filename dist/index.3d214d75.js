@@ -667,7 +667,7 @@ window.addEventListener("resize", function() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-},{"three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv","three/examples/jsm/webxr/ARButton.js":"7lQCi","@parcel/transformer-js/src/esmodule-helpers.js":"9YMAy","./img/stars.jpg":"fF64W","./img/sun.jpg":"8PtyY","./img/mercury.jpg":"hmDJ6","./img/venus.jpg":"jSsSo","./img/earth.jpg":"jaaP2","./img/mars.jpg":"iSzJw","./img/jupiter.jpg":"kqHAW","./img/saturn.jpg":"51I9j","./img/saturn ring.png":"2IZXy","./img/uranus.jpg":"eOyL6","./img/uranus ring.png":"6xW78","./img/neptune.jpg":"dsKOx","./img/pluto.jpg":"ki2Fb"}],"ktPTu":[function(require,module,exports) {
+},{"three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv","three/examples/jsm/webxr/ARButton.js":"7lQCi","./img/stars.jpg":"fF64W","./img/sun.jpg":"8PtyY","./img/mercury.jpg":"hmDJ6","./img/venus.jpg":"jSsSo","./img/earth.jpg":"jaaP2","./img/mars.jpg":"iSzJw","./img/jupiter.jpg":"kqHAW","./img/saturn.jpg":"51I9j","./img/saturn ring.png":"2IZXy","./img/uranus.jpg":"eOyL6","./img/uranus ring.png":"6xW78","./img/neptune.jpg":"dsKOx","./img/pluto.jpg":"ki2Fb","@parcel/transformer-js/src/esmodule-helpers.js":"9YMAy"}],"ktPTu":[function(require,module,exports) {
 /**
  * @license
  * Copyright 2010-2022 Three.js Authors
