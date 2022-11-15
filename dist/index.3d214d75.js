@@ -534,8 +534,8 @@ function hmrAcceptRun(bundle, id) {
 },{}],"bB7Pu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _three = require("three");
-var _orbitControlsJs = require("three/examples/jsm/controls/OrbitControls.js");
-var _arbuttonJs = require("three/examples/jsm/webxr/ARButton.js");
+var _orbitControlsJs = require("OrbitControls");
+var _arbuttonJs = require("ARButton");
 var _starsJpg = require("./img/stars.jpg");
 var _starsJpgDefault = parcelHelpers.interopDefault(_starsJpg);
 var _sunJpg = require("./img/sun.jpg");
