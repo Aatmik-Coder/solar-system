@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "three": "^0.146.0"
-  }
+  },
+  "name": "solar_system",
+  "description": "OPEN IN SMART PHONE FOR BETTER VIEW 😎",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aatmik-Coder/solar-system.git"
+  },
+  "author": "aatmik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aatmik-Coder/solar-system/issues"
+  },
+  "homepage": "https://github.com/Aatmik-Coder/solar-system#readme"
 }
