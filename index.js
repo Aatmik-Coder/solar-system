@@ -1,7 +1,9 @@
 import * as THREE from 'three';
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+// import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 
-import { ARButton } from 'three/examples/jsm/webxr/ARButton';
+// import { ARButton } from 'three/examples/jsm/webxr/ARButton';
+import {OrbitControls} from 'OrbitControls';
+import { ARButton } from 'ARButton';
 
 import starsTexture from './src/img/stars.jpg';
 import sunTexture from './src/img/sun.jpg';
