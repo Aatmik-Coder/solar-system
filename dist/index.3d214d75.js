@@ -534,44 +534,44 @@ function hmrAcceptRun(bundle, id) {
 },{}],"bB7Pu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _three = require("three");
-var _orbitControls = require("OrbitControls");
-var _arbutton = require("ARButton");
-var _starsJpg = require("./src/img/stars.jpg");
+var _orbitControlsJs = require("three/examples/jsm/controls/OrbitControls.js");
+var _arbuttonJs = require("three/examples/jsm/webxr/ARButton.js");
+var _starsJpg = require("./img/stars.jpg");
 var _starsJpgDefault = parcelHelpers.interopDefault(_starsJpg);
-var _sunJpg = require("./src/img/sun.jpg");
+var _sunJpg = require("./img/sun.jpg");
 var _sunJpgDefault = parcelHelpers.interopDefault(_sunJpg);
-var _mercuryJpg = require("./src/img/mercury.jpg");
+var _mercuryJpg = require("./img/mercury.jpg");
 var _mercuryJpgDefault = parcelHelpers.interopDefault(_mercuryJpg);
-var _venusJpg = require("./src/img/venus.jpg");
+var _venusJpg = require("./img/venus.jpg");
 var _venusJpgDefault = parcelHelpers.interopDefault(_venusJpg);
-var _earthJpg = require("./src/img/earth.jpg");
+var _earthJpg = require("./img/earth.jpg");
 var _earthJpgDefault = parcelHelpers.interopDefault(_earthJpg);
-var _marsJpg = require("./src/img/mars.jpg");
+var _marsJpg = require("./img/mars.jpg");
 var _marsJpgDefault = parcelHelpers.interopDefault(_marsJpg);
-var _jupiterJpg = require("./src/img/jupiter.jpg");
+var _jupiterJpg = require("./img/jupiter.jpg");
 var _jupiterJpgDefault = parcelHelpers.interopDefault(_jupiterJpg);
-var _saturnJpg = require("./src/img/saturn.jpg");
+var _saturnJpg = require("./img/saturn.jpg");
 var _saturnJpgDefault = parcelHelpers.interopDefault(_saturnJpg);
-var _saturnRingPng = require("./src/img/saturn ring.png");
+var _saturnRingPng = require("./img/saturn ring.png");
 var _saturnRingPngDefault = parcelHelpers.interopDefault(_saturnRingPng);
-var _uranusJpg = require("./src/img/uranus.jpg");
+var _uranusJpg = require("./img/uranus.jpg");
 var _uranusJpgDefault = parcelHelpers.interopDefault(_uranusJpg);
-var _uranusRingPng = require("./src/img/uranus ring.png");
+var _uranusRingPng = require("./img/uranus ring.png");
 var _uranusRingPngDefault = parcelHelpers.interopDefault(_uranusRingPng);
-var _neptuneJpg = require("./src/img/neptune.jpg");
+var _neptuneJpg = require("./img/neptune.jpg");
 var _neptuneJpgDefault = parcelHelpers.interopDefault(_neptuneJpg);
-var _plutoJpg = require("./src/img/pluto.jpg");
+var _plutoJpg = require("./img/pluto.jpg");
 var _plutoJpgDefault = parcelHelpers.interopDefault(_plutoJpg);
 const renderer = new _three.WebGL1Renderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.xr.enabled = true;
 document.body.appendChild(renderer.domElement);
-const button = (0, _arbutton.ARButton).createButton(renderer);
+const button = (0, _arbuttonJs.ARButton).createButton(renderer);
 console.log(button);
 document.body.appendChild(button);
 const scene = new _three.Scene();
 const camera = new _three.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-const orbit = new (0, _orbitControls.OrbitControls)(camera, renderer.domElement);
+const orbit = new (0, _orbitControlsJs.OrbitControls)(camera, renderer.domElement);
 camera.position.set(-90, 140, 140);
 orbit.update();
 const ambientLight = new _three.AmbientLight(0x333333);
@@ -667,110 +667,7 @@ window.addEventListener("resize", function() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-},{"./src/img/stars.jpg":"lPvS3","./src/img/sun.jpg":"fLW8c","./src/img/mercury.jpg":"hCVgO","./src/img/venus.jpg":"a3Kvd","./src/img/earth.jpg":"fIAfo","./src/img/mars.jpg":"ly7Hx","./src/img/jupiter.jpg":"iWeFc","./src/img/saturn.jpg":"7RXWk","./src/img/saturn ring.png":"ltylv","./src/img/uranus.jpg":"b3WkT","./src/img/uranus ring.png":"jpXmH","./src/img/neptune.jpg":"78Qz0","./src/img/pluto.jpg":"kwaHB","@parcel/transformer-js/src/esmodule-helpers.js":"9YMAy","three":"ktPTu","three/examples/jsm/controls/OrbitControls":"7mqRv","three/examples/jsm/webxr/ARButton":"7lQCi"}],"lPvS3":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "stars.a1d7fe60.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"i9rVb":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"fLW8c":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "sun.a08d7ba3.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"hCVgO":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "mercury.e64be2d9.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"a3Kvd":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "venus.c3875816.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"fIAfo":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "earth.0431f8a5.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"ly7Hx":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "mars.39828838.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"iWeFc":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "jupiter.970a44f9.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"7RXWk":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "saturn.f0999ace.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"ltylv":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "saturn ring.cc9fe67e.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"b3WkT":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "uranus.03f8200b.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"jpXmH":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "uranus ring.bb04d0b4.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"78Qz0":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "neptune.69b29d20.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"kwaHB":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "pluto.cc2d7afe.jpg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"i9rVb"}],"9YMAy":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"ktPTu":[function(require,module,exports) {
+},{"three":"ktPTu","three/examples/jsm/controls/OrbitControls.js":"7mqRv","three/examples/jsm/webxr/ARButton.js":"7lQCi","@parcel/transformer-js/src/esmodule-helpers.js":"9YMAy","./img/stars.jpg":"fF64W","./img/sun.jpg":"8PtyY","./img/mercury.jpg":"hmDJ6","./img/venus.jpg":"jSsSo","./img/earth.jpg":"jaaP2","./img/mars.jpg":"iSzJw","./img/jupiter.jpg":"kqHAW","./img/saturn.jpg":"51I9j","./img/saturn ring.png":"2IZXy","./img/uranus.jpg":"eOyL6","./img/uranus ring.png":"6xW78","./img/neptune.jpg":"dsKOx","./img/pluto.jpg":"ki2Fb"}],"ktPTu":[function(require,module,exports) {
 /**
  * @license
  * Copyright 2010-2022 Three.js Authors
@@ -29945,7 +29842,37 @@ if (typeof window !== "undefined") {
     else window.__THREE__ = REVISION;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"9YMAy"}],"7mqRv":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"9YMAy"}],"9YMAy":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"7mqRv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OrbitControls", ()=>OrbitControls);
@@ -30753,6 +30680,79 @@ class ARButton {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"9YMAy"}]},["dqjOR","bB7Pu"], "bB7Pu", "parcelRequire94c2")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"9YMAy"}],"fF64W":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "stars.ff6fc40d.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"i9rVb":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"8PtyY":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "sun.d2a04372.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"hmDJ6":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "mercury.b073db7e.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"jSsSo":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "venus.ea734012.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"jaaP2":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "earth.e0b3942f.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"iSzJw":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "mars.b0f73859.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"kqHAW":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "jupiter.b5cb8b78.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"51I9j":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "saturn.4d5a4962.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"2IZXy":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "saturn ring.8f90307b.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"eOyL6":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "uranus.22e2299c.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"6xW78":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "uranus ring.873266c5.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"dsKOx":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "neptune.493db6a9.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}],"ki2Fb":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "pluto.fbb933c2.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"i9rVb"}]},["dqjOR","bB7Pu"], "bB7Pu", "parcelRequire94c2")
 
 //# sourceMappingURL=index.3d214d75.js.map
