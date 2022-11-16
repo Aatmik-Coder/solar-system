@@ -567,9 +567,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.xr.enabled = true;
 document.body.appendChild(renderer.domElement);
 const scene = new _three.Scene();
-const camera = new _three.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new _three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const orbit = new (0, _orbitControlsJs.OrbitControls)(camera, renderer.domElement);
-camera.position.set(-90, 140, 140);
+camera.position.set(20, 140, 140);
 orbit.update();
 const ambientLight = new _three.AmbientLight(0x333333);
 scene.add(ambientLight);
@@ -590,6 +590,10 @@ const sunMat = new _three.MeshBasicMaterial({
 });
 const sun = new _three.Mesh(sunGeo, sunMat);
 scene.add(sun);
+sun.position.z = -100;
+sun.position.y = -10;
+// const sunobj = new THREE.Object3D();
+// sunobj.add(sun);
 function createPlanet(size, texture, position, ring) {
     const geo = new _three.SphereGeometry(size, 30, 30);
     const mat = new _three.MeshStandardMaterial({
@@ -647,6 +651,7 @@ function animate() {
     neptune.mesh.rotateY(0.032);
     pluto.mesh.rotateY(0.008);
     // around-sun-rotation
+    // sunobj.rotateY(0.02);
     mercury.obj.rotateY(0.04);
     venus.obj.rotateY(0.015);
     earth.obj.rotateY(0.01);
