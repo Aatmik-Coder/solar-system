@@ -1,7 +1,7 @@
-import * as THREE from 'https://unpkg.com/three@0.146.0/build/three.module.js';
-import {OrbitControls} from 'https://unpkg.com/three@0.146.0/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'three';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
 
-import { ARButton } from 'https://unpkg.com/three@0.146.0/examples/jsm/webxr/ARButton.js';
+import { ARButton } from 'three/examples/jsm/webxr/ARButton.js';
 
 import starsTexture from './img/stars.jpg';
 import sunTexture from './img/sun.jpg';
@@ -17,15 +17,11 @@ import uranusRingTexture from './img/uranus ring.png';
 import neptuneTexture from './img/neptune.jpg';
 import plutoTexture from './img/pluto.jpg';
 
-const renderer = new THREE.WebGL1Renderer();
+const renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.xr.enabled = true;
 document.body.appendChild(renderer.domElement);
-
-const button = ARButton.createButton(renderer);
-console.log(button);
-document.body.appendChild(button);
 
 const scene = new THREE.Scene();
 
@@ -44,15 +40,16 @@ orbit.update();
 const ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
 
-const cubeTextureLoader = new THREE.CubeTextureLoader();
-scene.background = cubeTextureLoader.load([
-    starsTexture,
-    starsTexture,
-    starsTexture,
-    starsTexture,
-    starsTexture,
-    starsTexture
-]);
+// const cubeTextureLoader = new THREE.CubeTextureLoader();
+renderer.setClearColor(0xffffff, 0);
+// cubeTextureLoader.load([
+//     starsTexture,
+//     starsTexture,
+//     starsTexture,
+//     starsTexture,
+//     starsTexture,
+//     starsTexture
+// ]);
 
 const textureLoader = new THREE.TextureLoader();
 
@@ -142,6 +139,10 @@ function animate() {
 }
 
 renderer.setAnimationLoop(animate);
+
+const butto = ARButton.createButton(renderer);
+document.body.appendChild(butto);
+
 
 window.addEventListener('resize', function() {
     camera.aspect = window.innerWidth / window.innerHeight;
