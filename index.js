@@ -41,8 +41,7 @@ const ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
 
 // const cubeTextureLoader = new THREE.CubeTextureLoader();
-renderer.setClearColor(0xffffff, 0);
-// cubeTextureLoader.load([
+// scene.background = cubeTextureLoader.load([
 //     starsTexture,
 //     starsTexture,
 //     starsTexture,
@@ -50,6 +49,7 @@ renderer.setClearColor(0xffffff, 0);
 //     starsTexture,
 //     starsTexture
 // ]);
+renderer.setClearColor(0xffffff, 0);
 
 const textureLoader = new THREE.TextureLoader();
 

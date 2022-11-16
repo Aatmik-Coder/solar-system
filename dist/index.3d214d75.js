@@ -574,8 +574,7 @@ orbit.update();
 const ambientLight = new _three.AmbientLight(0x333333);
 scene.add(ambientLight);
 // const cubeTextureLoader = new THREE.CubeTextureLoader();
-renderer.setClearColor(0xffffff, 0);
-// cubeTextureLoader.load([
+// scene.background = cubeTextureLoader.load([
 //     starsTexture,
 //     starsTexture,
 //     starsTexture,
@@ -583,6 +582,7 @@ renderer.setClearColor(0xffffff, 0);
 //     starsTexture,
 //     starsTexture
 // ]);
+renderer.setClearColor(0xffffff, 0);
 const textureLoader = new _three.TextureLoader();
 const sunGeo = new _three.SphereGeometry(16, 30, 30);
 const sunMat = new _three.MeshBasicMaterial({
